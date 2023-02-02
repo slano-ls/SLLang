@@ -100,7 +100,7 @@
  '(ivy-posframe-mode t nil (ivy-posframe))
  '(mouse-wheel-progressive-speed nil)
  '(package-selected-packages
-   '(wakatime-mode olivetti subed ivy-posframe gpt org-center-headings))
+   '(book-mode wakatime-mode olivetti subed ivy-posframe gpt org-center-headings))
  '(wakatime-api-key "waka_b0c3c9b1-a895-4f1a-8706-f6ce7f52869e")
  '(wakatime-cli-path "~/.wakatime/wakatime-cli"))
 (put 'customize-face 'disabled nil)

@@ -28,9 +28,5 @@
 (package! hl-sentence
   :pin "86ae38d3103bd20da5485cbdd59dfbd396c45ee4")
 (package! focus)
-(use-package nano-sidebar
-  :ensure nil
-  :defer t
-  :quelpa (nano-sidebar
-           :fetcher github
-           :repo "rougier/nano-sidebar"))
+(package! org-sidebar)
+(package! org-view-mode)

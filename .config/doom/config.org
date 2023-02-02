@@ -1,8 +1,9 @@
 
- #+title: Emacs Configuration
+#+title: Emacs Configuration
 -----
 * Introduction
 After reading some of the other amazing configurations written by people like [[https://tecosaur.github.io/emacs-config/config.html][Tecosaur]],[[https://github.com/shaunsingh/nyoom.emacs][ Shaun Singh]], and [[https://github.com/sunnyhasija/Academic-Doom-Emacs-Config][Sunny Hasja]]; I decided to upload my own (horrible) *Emacs Configuration*. As a High School student, with an avid interest in *Computer Science* and my class work. This is a *workflow* that I have designed to work well for myself ... but may not be the best for your workflow! There are lots of bits an pieces cobbled together from many different sources, but I have to admit ... I forgot half of them!
+
 I will do my best to give thanks and credit to those who's code I +stole+ ... I mean used, but apologies in advance!
 Well ... Let's get started.
 * Initial Configuration
@@ -15,20 +16,22 @@ There is some initial configuration we have to do in Doom ... So let's look into
 (setq user-full-name "Saihaj Law"
       user-mail-address "laws0817@gmail.com")
 
-(load! "~/.config/doom/zen-writer.el")
+;;(load! "~/.config/doom/zen-writer.el")
 ;;(use-package :autothemer)
+(require 'org-view-mode)
+(require 'org-sidebar)
 (require 'nano-theme)
 (require 'ef-themes)
 (require 'focus)
-(require 'nano-sidebar)
-(nano-sidebar-toggle)
+;;(require 'nano-sidebar)
 (setq +zen-text-scale 0.55)
-(setq doom-theme 'nano-light)
+(setq doom-theme 'doom-earl-grey)
 ;;(setq display-line-numbers-type 'relative)
 
-;; (set-frame-parameter (selected-frame) 'alpha '(95 95))
-;; (add-to-list 'default-frame-alist '(alpha 95 95))
- (require 'smooth-scroll)
+ ;; (set-frame-parameter (selected-frame) 'alpha '(95 95))
+
+ ;; (add-to-list 'default-frame-alist '(alpha 95 95))
+(require 'smooth-scroll)
 #+end_src
 
 Whoa ... Already we have some messy /lisp/. But just for a short summary ... I am initializing my personal information, my theme configuration (/catppuccin lovers stand up/) as well as zooming out a bit from *Zen's* overzealous centering. Additionally I am just specifiying my *line numbering* type and (/in the comment region/) is some code for when I feel like making my Emacs Transparent!\sidenote{The autothemer package is there for my catppuccin colour scheme}
@@ -360,25 +363,25 @@ I love Org Capture. It is probably my favourite part of Emacs ... I also have it
 #+begin_src emacs-lisp :tangle yes
 (after! org-roam
     (setq org-roam-capture-templates
-        `(("F" "French" plain "%?"
+        `(("A" "Advanced Functions" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:French\n#+LATEX_CLASS:tufte-book\n\n ")
+      "${title}\n#+filetags:Advanced Functions\n#+LATEX_CLASS:tufte-book\n\n ")
      :unnarrowed t)
-        ("D" "Data Management" plain "%?"
+        ("C" "Chemistry" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:Data_Management \n#+LATEX_CLASS:tufte-book\n\n ")
+      "${title}\n#+filetags:Chemistry\n#+LATEX_CLASS:tufte-book\n\n ")
      :unnarrowed t)
-        ("C" "Computer Engineering" plain "%?"
+        ("S" "Computer Science" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:Computer_Engineering\n#+LATEX_CLASS:tufte-book \n\n ")
+      "${title}\n#+filetags:Computer_Science\n#+LATEX_CLASS:tufte-book \n\n ")
      :unnarrowed t)
-        ("B" "Biology " plain "%?"
+        ("E" "English" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:Biology\n#+LATEX_CLASS:tufte-book\n\n ")
+      "${title}\n#+filetags:English\n#+LATEX_CLASS:tufte-book\n\n ")
      :unnarrowed t))))
 #+end_src
 *** Org Capture Pt. 2

@@ -2,20 +2,22 @@
 (setq user-full-name "Saihaj Law"
       user-mail-address "laws0817@gmail.com")
 
-(load! "~/.config/doom/zen-writer.el")
+;;(load! "~/.config/doom/zen-writer.el")
 ;;(use-package :autothemer)
+(require 'org-view-mode)
+(require 'org-sidebar)
 (require 'nano-theme)
 (require 'ef-themes)
 (require 'focus)
-(require 'nano-sidebar)
-(nano-sidebar-toggle)
+;;(require 'nano-sidebar)
 (setq +zen-text-scale 0.55)
-(setq doom-theme 'nano-light)
+(setq doom-theme 'doom-earl-grey)
 ;;(setq display-line-numbers-type 'relative)
 
-;; (set-frame-parameter (selected-frame) 'alpha '(95 95))
-;; (add-to-list 'default-frame-alist '(alpha 95 95))
- (require 'smooth-scroll)
+ ;; (set-frame-parameter (selected-frame) 'alpha '(95 95))
+
+ ;; (add-to-list 'default-frame-alist '(alpha 95 95))
+(require 'smooth-scroll)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 (add-hook! '+doom-dashboard-functions :append
@@ -292,25 +294,25 @@
 
 (after! org-roam
     (setq org-roam-capture-templates
-        `(("F" "French" plain "%?"
+        `(("A" "Advanced Functions" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:French\n#+LATEX_CLASS:tufte-book\n\n ")
+      "${title}\n#+filetags:Advanced Functions\n#+LATEX_CLASS:tufte-book\n\n ")
      :unnarrowed t)
-        ("D" "Data Management" plain "%?"
+        ("C" "Chemistry" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:Data_Management \n#+LATEX_CLASS:tufte-book\n\n ")
+      "${title}\n#+filetags:Chemistry\n#+LATEX_CLASS:tufte-book\n\n ")
      :unnarrowed t)
-        ("C" "Computer Engineering" plain "%?"
+        ("S" "Computer Science" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:Computer_Engineering\n#+LATEX_CLASS:tufte-book \n\n ")
+      "${title}\n#+filetags:Computer_Science\n#+LATEX_CLASS:tufte-book \n\n ")
      :unnarrowed t)
-        ("B" "Biology " plain "%?"
+        ("E" "English" plain "%?"
      :if-new
      (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-      "${title}\n#+filetags:Biology\n#+LATEX_CLASS:tufte-book\n\n ")
+      "${title}\n#+filetags:English\n#+LATEX_CLASS:tufte-book\n\n ")
      :unnarrowed t))))
 
 (when (display-graphic-p)
