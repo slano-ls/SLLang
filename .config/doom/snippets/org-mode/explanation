@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name:explanation
-# key:exp
-# --
-\begin{explanation}
-$0
-\end{explanation}
