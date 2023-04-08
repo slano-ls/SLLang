@@ -4,24 +4,16 @@
 
 scope_T* init_scope()
 {
-    scope_T* scope = calloc(1, sizeof(struct SCOPE_STRUCT));
-
-    scope->function_definitions = (void*) 0;
-    scope->function_definitions_size = 0;
-
-    scope->variable_definitions = (void*) 0;
-    scope->variable_definitions_size = 0;
-
-    return scope;
+    return calloc(1, sizeof(struct SCOPE_STRUCT));
 }
 
 AST_T* scope_add_function_definition(scope_T* scope, AST_T* fdef)
 {
-    scope->function_definitions_size += 1;
+    scope->function_definitions_size++
 
-    if (scope->function_definitions == (void*)0)
+    if (scope->function_definitions == NULL)
     {
-        scope->function_definitions = calloc(1, sizeof(struct AST_STRUCT*));
+        scope->function_definitions = malloc(sizeof(struct AST_STRUCT*));
     }
     else
     {
@@ -50,20 +42,20 @@ AST_T* scope_get_function_definition(scope_T* scope, const char* fname)
         }
     }
 
-    return (void*)0;
+    return NULL;
 }
 
 AST_T* scope_add_variable_definition(scope_T* scope, AST_T* vdef)
 {
-    if (scope->variable_definitions == (void*) 0)
+    if (scope->variable_definitions == NULL)
     {
-        scope->variable_definitions = calloc(1, sizeof(struct AST_STRUCT*));
+        scope->variable_definitions = malloc(sizeof(struct AST_STRUCT*));
         scope->variable_definitions[0] = vdef;
         scope->variable_definitions_size += 1;
     }
     else
     {
-        scope->variable_definitions_size += 1;
+        scope->variable_definitions_size ++;
         scope->variable_definitions = realloc(
             scope->variable_definitions,
             scope->variable_definitions_size * sizeof(struct AST_STRUCT*)
@@ -86,5 +78,5 @@ AST_T* scope_get_variable_definition(scope_T* scope, const char* name)
         }
     }
 
-    return (void*)0;
+    return NULL;
 }

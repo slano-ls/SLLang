@@ -1,7 +1,7 @@
 #ifndef VISITOR_H_
 #define VISITOR_H_
 
-
+#include "AST.h"
 typedef struct VISITOR_STRUCT
 {
 } visitor_T;
