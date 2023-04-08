@@ -2,6 +2,7 @@ exec = SLlang.out
 sources = $(wildcard src/*.c)
 objects = $(sources: .c=.sll)
 flags = -g
+PREFIX := /usr/local
 
 $(exec): $(objects)
 	gcc $(objects) $(flags) -o $(exec)
@@ -11,9 +12,7 @@ $(exec): $(objects)
 
 install:
 	make
-	cp ./SLlang.out /usr/local/bin/SLlang
+	cp ./SLlang.out $(PREFIX)/bin/sllang
 
 clean:
-	-rm  *.out
-	-rm *.o
-	-rm src/*.o
+	rm  *.out -f

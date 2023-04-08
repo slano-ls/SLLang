@@ -235,8 +235,7 @@ AST_T* parser_parse_id(parser_T* parser, scope_T* scope)
     {
         return parser_parse_variable_definition(parser, scope);
     }
-    else
-    if (strcmp(parser->current_token->value, "function") == 0)
+    else if (strcmp(parser->current_token->value, "function") == 0)
     {
         return parser_parse_function_definition(parser, scope);
     }

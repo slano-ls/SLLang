@@ -1,6 +1,6 @@
 #ifndef SCOPE_H_
 #define SCOPE_H_
-
+#include "AST.h"
 
 typedef struct SCOPE_STRUCT
 {
